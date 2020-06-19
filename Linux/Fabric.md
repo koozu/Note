@@ -87,7 +87,6 @@
                         print('Httpd installed')
                         run('systemctl start httpd')
                         print('Httpd turned on')
-
     ```
 ---
 參考資料:
