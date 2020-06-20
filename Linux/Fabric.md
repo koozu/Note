@@ -5,6 +5,7 @@
 3. 安裝Fabric `yum install Fabric`
 4. 檢查是否安裝成功 `python -c "from fabric.api import * ; print env.version"`
 5. 創建一個fabfile.py `vim fabfile.py`
+
     ```py
     def hello():
         print('hello')
@@ -12,6 +13,7 @@
 6. 使用函式`fab hello`
 ## fabfile
 - 引用API
+
     ```py
     from fabric.api import *
     ```
@@ -20,18 +22,19 @@
     - `env.user` : 設定登入的使用者
     - `enc.passwords` : 設定登入的密碼
     - `env.roledefs` : 設定主機的角色，類似分組功能
-    ```py
-    env.hosts = ['192.168.56.106', '192.168.56.107']
-    env.user = 'root'
-    env.passwords = {
-    'root@192.168.56.106:22':'centos',
-    'root@192.168.56.107:22':'centos'}
-    env.roledefs = {
-    'all':['192.168.56.106', '192.168.56.107'],
-    'test1':['192.168.56.106'],
-    'test2':['192.168.56.107']
-    }
-    ```
+
+        ```py
+        env.hosts = ['192.168.56.106', '192.168.56.107']
+        env.user = 'root'
+        env.passwords = {
+        'root@192.168.56.106:22':'centos',
+        'root@192.168.56.107:22':'centos'}
+        env.roledefs = {
+        'all':['192.168.56.106', '192.168.56.107'],
+        'test1':['192.168.56.106'],
+        'test2':['192.168.56.107']
+        }
+        ```
 - API可使用函式
     - `cd()` : 移動目錄
     - `run()` : 執行遠端命令
@@ -54,12 +57,14 @@
         - `command` : stdout, running
 ## 範例
 - 在user家目錄創建資料夾
+
     ```py
     def CreateDir():
         with cd('/home/user/'):
                 run('mkdir fabrictest')
     ```
 - 取得主機IP
+
     ```py
     def GetIP():
         with settings(hide('everything'), warn_only=True):
@@ -67,6 +72,7 @@
         print(ip)
     ```
 - 開啟Httpd
+
     ```py
     @roles('all')
     def OpenHttpd():
