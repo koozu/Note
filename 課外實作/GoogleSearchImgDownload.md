@@ -1,5 +1,7 @@
 # 下載多個Google搜尋圖片
+- 程式執行畫面
 
+    ![](img/GoogleSearchImgDownload/1.png)
 ```py
 #下載google圖片搜尋的圖片
 #使用前請先將chromedriver更新至對應版本，並將輸入法鎖定在英文
