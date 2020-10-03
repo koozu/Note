@@ -1,7 +1,23 @@
 # 下載多個Google搜尋圖片
-- 程式執行畫面
+
+## 製作動機
+
+在大學三年級時，進行深度學習的模型訓練中發現，我們的資料集數量缺乏，於是想從網路上抓取圖片加進資料集，但是手動的方式有點累人，然後之前有看到自動操作瀏覽器的Python套件，就來試試看可不可以用Python寫一個自動下載圖片的程式，免得浪費人力在下載圖片這種小事情。
+
+## 製作方法
+
+通過三個套件 : Selenium、PyKeyBoard、Pyperclip，自動化的控制電腦去下載圖片。流程圖如下所示。首先需要下載chromedriver讓Selenium可以打開瀏覽器，透過圖片的xpath來控制圖片，再來使用Selenium右鍵它，PyKeyBoard按下V鍵進行另存圖片，Pyperclip複製下載目的地的路徑，PyKeyBoard按下Ctrl+V再按下Enter，即成功儲存。(本來是用PyKeyBoard輸入目的地的路徑，不過發現使用複製更加迅速)
+
+- 流程圖
 
     ![](img/GoogleSearchImgDownload/1.png)
+
+## 實作畫面
+
+![](img/GoogleSearchImgDownload/2.png)
+
+## 程式碼
+
 ```py
 #下載google圖片搜尋的圖片
 #使用前請先將chromedriver更新至對應版本，並將輸入法鎖定在英文
